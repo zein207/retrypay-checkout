@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $f-body;
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: initial;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+.f-body {
+    font-family: $f-body;
+}
+
+.mt-5 {
+    margin-top: 25px;
+}
+
+.mt-10 {
+    margin-top: 50px;
+}
+
+.mr-4 {
+    margin-right: 20px;
+}
+
+.mv-1 {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.ml-5 {
+    margin-left: 25px;
+}
+
+.ml-6 {
+    margin-left: 30px;
+}
+
+.pl-5 {
+    padding-left: 25px;
+}
+
+.pt-5 {
+    padding-top: 25px;
+}
+
+.c-primary {
+    color: $c-primary;
+}
+
+.btn {
+    padding: 10px 50px;
+    border-radius: 25px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background-color: $c-primary;
+    color: #fff;
+
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease;
+
+    &:hover {
+        background-color: darken($c-primary, 7);
+    }
+}
+
+.btn-block {
+    display: block;
+}
+
+.pointer {
+    cursor: pointer;
+}
