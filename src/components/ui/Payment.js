@@ -22,7 +22,7 @@ export const Payment = () => {
             </div>
             <form className='payment-form' onSubmit={handleSubmit}>
                 <fieldset className='payment-form__fields'>
-                    <label for="clientname">
+                    <label htmlFor="clientname">
                         Nombre de tarjetahabiente
                         <input
                             onChange={(e) => setName(e.target.value)}
@@ -61,7 +61,7 @@ export const Payment = () => {
                         className='payment-form__input'
                     />
                 </fieldset>
-                <label for="switch">Guardar esta tarjeta</label><input type="checkbox" id="switch" />
+                <label htmlFor="switch">Guardar esta tarjeta</label><input type="checkbox" id="switch" />
                 <button className='btn btn-primary' type="submit">Pagar <span>$1,638.00</span></button>
             </form>
         </div>

@@ -23,6 +23,52 @@ button {
     background-color: transparent;
 }
 
+fieldset {
+    border: none;
+}
+
+input {
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent !important;
+    font-family: $f-body;
+
+    &::placeholder {
+        color: $c-tertiary !important;
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        -webkit-text-fill-color: $c-tertiary;
+        transition: background-color 5000000s ease-in-out 0s;
+    }
+    &:-webkit-autofill::first-line {
+        font-family: $f-body;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+}
+
+select {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: $c-tertiary;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: $f-body;
+    width: 65px;
+
+    &:active {
+        border: none;
+        outline: none;
+    }
+}
+
 .flex-center {
     display: flex;
     justify-content: center;
@@ -69,6 +115,14 @@ button {
     color: $c-primary;
 }
 
+.c-tertiary {
+    color: $c-tertiary;
+}
+
+.c-white {
+    color: #fff;
+}
+
 .btn {
     padding: 10px 50px;
     border-radius: 25px;
@@ -95,4 +149,8 @@ button {
 
 .pointer {
     cursor: pointer;
+}
+
+.center-container {
+    margin: 0 28px;
 }
