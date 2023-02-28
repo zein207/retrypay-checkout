@@ -53,6 +53,13 @@ input {
 
 }
 
+input.error {
+    border-color: $c-invalid;
+    &::placeholder {
+        color: $c-invalid;
+    }
+}
+
 select {
     background-color: transparent;
     border: none;

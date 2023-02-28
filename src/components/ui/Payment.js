@@ -25,6 +25,13 @@ export const Payment = () => {
         });
 
         // console.log(formData);
+
+        // Add error class when input is empty
+        if(e.target.value === '') {
+            e.target.classList.add('error');
+        } else {
+            e.target.classList.remove('error');
+        }
     };
 
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
@@ -40,6 +47,9 @@ export const Payment = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Your information was submitted successfully");
+
+        const button = document.querySelector('#sendButton');
+        button.innerHTML = "¡Pago exitoso!"
     };
 
 
@@ -119,6 +129,7 @@ export const Payment = () => {
                     className='btn btn-primary'
                     type="submit"
                     disabled={isButtonDisabled}
+                    id="sendButton"
                 >
                     Pagar<span>$1,638.00</span>
                 </button>
