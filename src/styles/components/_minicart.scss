@@ -1,0 +1,62 @@
+.minicart-summary {
+    
+    &-container {
+        margin: 28px;
+    }
+
+    &__copy {
+        display: flex;
+        color: $c-secondary;
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 28px;
+    }
+
+    &__products {
+        margin-bottom: 2.5rem;
+    }
+
+    &__price-info {
+        color: $c-dark-blue;
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    &__total {
+        color: $c-primary;
+        font-size: 18px;
+        font-weight: 700;
+        padding-top: 15px;
+        border-top: 1px solid #8A8A8A;
+    }
+}
+
+.minicart-product {
+    &__item {
+        font-weight: 700;
+        font-size: 15px;
+        color: $c-dark-blue;
+        display: flex;
+        margin-bottom: 20px;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            background-position: center;
+            background-repeat: repeat-x;
+            background-image: $line;
+            width: 100%;
+            height: 3px;
+            bottom: -10px;
+            left: 0;
+        }
+    }
+
+    &__price {
+        font-weight: 600;
+    }
+}

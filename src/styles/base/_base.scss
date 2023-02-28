@@ -74,8 +74,20 @@ select {
     justify-content: center;
 }
 
+.flex {
+    display: flex;
+}
+
 .f-body {
     font-family: $f-body;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+.w-25 {
+    width: 25%;
 }
 
 .mt-5 {
