@@ -281,4 +281,8 @@ input:checked + .btn-switch:after {
     .hide-mt {
         display: flex;
     }
+
+    select {
+        width: 85px;
+    }
 }
