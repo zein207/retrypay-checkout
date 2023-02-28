@@ -1,22 +1,47 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export const Payment = () => {
 
-    const [name, setName] = useState('');
-    const [cardNumber, setCardNumber] = useState('');
-    const [expirationDate, setExpirationDate] = useState('');
-    const [CVVNumber, setCVVNumber] = useState('');
+    // Handle check button | toggle button
+    const [isChecked, setIsChecked] = useState(false);
+    const handleOnCheck = () => {
+        setIsChecked(!isChecked);
+    };
 
+    // Form state
+    const [formData, setFormData] = useState({
+        clientname: '',
+        cardnumber: '',
+        expirationdate: '',
+        cvvnumber: ''
+    });
+
+    // Event handler to update form state
+    const handleInputChange = (e) => {
+        // update state based on form input
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+
+        // console.log(formData);
+    };
+
+    const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+    // Effect hook to update button disabled state
+    useEffect(() => {
+        const { clientname, cardnumber, expirationdate, cvvnumber } = formData;
+        const isFormValid = clientname !== '' && cardnumber !== '' && expirationdate !== '' && cvvnumber !== '';
+        setIsButtonDisabled(!isFormValid);
+    }, [formData]);
+
+    // Submit | click 'pagar' button
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Your information was submitted successfully");
     };
 
-    const [isChecked, setIsChecked] = useState(false);
-
-    const handleOnCheck = () => {
-      setIsChecked(!isChecked);
-    };
 
     return (
         <div className='payment-container'>
@@ -42,44 +67,44 @@ export const Payment = () => {
                             Nombre de tarjetahabiente
                         </div>
                         <input
-                            onChange={(e) => setName(e.target.value)}
+                            onChange={handleInputChange}
                             type="text"
-                            id="clientname"
+                            // id="clientname"
                             name="clientname"
-                            value={ name }
                             placeholder="Nombre como aparece en la tarjeta"
                             className='payment-form__input'
+                            required
                         />
                     </label>
                 </fieldset>
                 <fieldset className='payment-form__fields payment-form__fields--card'>
                     <div className='payment-form__label'>Información de tarjeta</div>
                     <input
-                        onChange={(e) => setCardNumber(e.target.value)}
+                        onChange={handleInputChange}
                         type="text"
-                        id="cardnumber"
+                        // id="cardnumber"
                         name="cardnumber"
-                        value={ cardNumber }
                         placeholder="Número"
                         className='payment-form__input payment-form__input--cardnumber w-100'
+                        required
                     />
                     <input
-                        onChange={(e) => setExpirationDate(e.target.value)}
+                        onChange={handleInputChange}
                         type="text"
-                        id="expirationdate"
+                        // id="expirationdate"
                         name="expirationdate"
-                        value={ expirationDate }
                         placeholder="MM/AA"
                         className='payment-form__input payment-form__input--expiration-date w-50'
+                        required
                     />
                     <input
-                        onChange={(e) => setCVVNumber(e.target.value)}
+                        onChange={handleInputChange}
                         type="text"
-                        id="cvvnumber"
+                        // id="cvvnumber"
                         name="cvvnumber"
-                        value={ CVVNumber }
                         placeholder="CVV"
                         className='payment-form__input payment-form__input--cvvnumber w-50'
+                        required
                     />
                 </fieldset>
                 <div className='toggle-button-container'>
@@ -90,7 +115,13 @@ export const Payment = () => {
                         onChange={ handleOnCheck } />
                     <label htmlFor="switch" className='btn-switch'>Guardar esta tarjeta</label>
                 </div>
-                <button className='btn btn-primary btn-disabled' type="submit">Pagar <span>$1,638.00</span></button>
+                <button
+                    className='btn btn-primary'
+                    type="submit"
+                    disabled={isButtonDisabled}
+                >
+                    Pagar<span>$1,638.00</span>
+                </button>
             </form>
         </div>
     )

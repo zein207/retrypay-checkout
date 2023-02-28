@@ -69,6 +69,13 @@
                 font-size: 14px;
             }
 
+            &:not(:placeholder-shown) {
+                border-color: $c-invalid;
+            }
+            &:valid {
+                border-color: hsl(120, 76%, 50%);
+            }
+              
             &--cardnumber {
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;

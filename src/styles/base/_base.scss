@@ -194,6 +194,10 @@ input:checked + .btn-switch:after {
     font-weight: 700;
     font-family: $f-body;
     width: 100%;
+
+    span {
+        margin-left: 5px;
+    }
 }
 
 .btn-primary {
@@ -211,13 +215,14 @@ input:checked + .btn-switch:after {
     }
 }
 
-.btn-disabled {
+.btn:disabled {
     background-color: #D1D6D7;
     box-shadow: 0px 9px 15px rgba(151, 151, 151, 0.1);
     color: #676D75;
+    cursor: default;
 
     &:hover {
-        background-color: darken(#D1D6D7, 7);
+        background-color:#D1D6D7;
     }
 }
 
