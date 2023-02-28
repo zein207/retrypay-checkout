@@ -60,3 +60,25 @@
         font-weight: 600;
     }
 }
+
+@media screen and (min-width: 767px) {
+
+    .minicart-summary {
+
+        &-container {
+            max-width: 415px;
+            margin: 40px auto;
+
+            .w-25 {
+                text-align: right;
+            }
+        }
+
+        &__copy {
+            span {
+                padding-right: 10px;
+            }
+        }
+
+    }
+}
