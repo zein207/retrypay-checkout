@@ -191,3 +191,43 @@ header {
         padding-left: 25px;
     }
 }
+
+// TABLET LANDSCAPE
+@media screen and (min-width: 1023px) {
+    .logo {
+        &__container {
+            justify-content: flex-start;
+            padding: 26px 40px;
+        }
+    }
+
+    .header-content {
+        display: flex;
+    }
+
+    .subtitle-container {
+        width: 178px;
+    }
+
+    .profile-summary-container {
+        flex-grow: 1;
+    }
+}
+
+// DESKTOP
+@media screen and (min-width: 1439px) {
+
+    .logo__container {
+        max-width: 1440px;
+        margin: 0 auto;
+        margin-bottom: 3rem;
+    }
+    .header-content {
+        max-width: 1220px;
+        margin: 0 auto;
+    }
+
+    .profile-summary-container {
+        margin-left: 130px;
+    }
+}

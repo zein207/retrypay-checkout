@@ -237,6 +237,10 @@ input:checked + .btn-switch:after {
     display: none;
 }
 
+.hide-mt {
+    display: none;
+}
+
 // TABLET
 @media screen and (min-width: 767px) {
     .center-container {
@@ -249,5 +253,32 @@ input:checked + .btn-switch:after {
 
     .hide-d {
         display: none;
+    }
+}
+
+// TABLET LANDSCAPE
+@media screen and (min-width: 1023px) {
+    
+    main {
+        display: flex;
+        margin: 20px 47px;
+        gap: 75px;
+    }
+}
+
+// DESKTOP
+@media screen and (min-width: 1439px) {
+    .center-container {
+        margin: 0;
+    }
+
+    main {
+        max-width: 1180px;
+        margin: 44px auto;
+        justify-content: space-between;
+    }
+
+    .hide-mt {
+        display: flex;
     }
 }

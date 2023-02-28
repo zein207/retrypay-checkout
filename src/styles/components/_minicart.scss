@@ -61,6 +61,7 @@
     }
 }
 
+// TABLET
 @media screen and (min-width: 767px) {
 
     .minicart-summary {
@@ -80,5 +81,17 @@
             }
         }
 
+    }
+}
+
+// TABLET LANDSCAPE
+@media screen and (min-width: 1023px) {
+
+    .minicart-summary {
+
+        &-container {
+            width: 40%;
+            margin: 3rem 0 0 0;
+        }
     }
 }
