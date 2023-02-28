@@ -22,9 +22,18 @@ export const Payment = () => {
         <div className='payment-container'>
             <h4 className='payment__title'>Selecciona <strong>tu método de pago</strong></h4>
             <div className='payment__items'>
-                <span className='payment__item payment__item--active'>Tarjeta</span>
-                <span className='payment__item'>Wallet</span>
-                <span className='payment__item'>Establecimientos</span>
+                <span className='payment__item payment__item--active'>
+                    <img src='/images/card-icon.svg' className='hide-m payment__icon'></img>
+                    <div className='hide-d'>Tarjeta</div> <div className='hide-m payment__item--cardtext'>Tarjeta de Crédito / Débito</div>
+                </span>
+                <span className='payment__item'>
+                    <img src='/images/wallet-icon.svg' className='hide-m payment__icon'></img>
+                    Wallet
+                </span>
+                <span className='payment__item'>
+                    <img src='/images/barcode-icon.svg' className='hide-m payment__icon'></img>
+                    Establecimientos
+                </span>
             </div>
             <form className='payment-form' onSubmit={handleSubmit}>
                 <fieldset className='payment-form__fields'>

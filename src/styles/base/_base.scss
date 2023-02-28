@@ -233,9 +233,21 @@ input:checked + .btn-switch:after {
     margin: 0 28px;
 }
 
+.hide-m {
+    display: none;
+}
+
 // TABLET
 @media screen and (min-width: 767px) {
     .center-container {
         margin: 0 35px;
+    }
+
+    .hide-m {
+        display: block;
+    }
+
+    .hide-d {
+        display: none;
     }
 }

@@ -111,3 +111,66 @@
         font-weight: 700;
     }
 }
+
+@media screen and (min-width: 767px) {
+
+    .payment {
+        &-container {
+            margin: 65px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        &__title {
+            font-size: 24px;
+            width: 100%;
+            margin-bottom: 3.5rem;
+        }
+
+        &__items {
+            width: 40%;
+            flex-direction: column;
+            background: transparent;
+            position: relative;
+            overflow: initial;
+
+            &::after {
+                content: '';
+                position: absolute;
+                height: 100%;
+                width: 2px;
+                right: -25px;
+                background-position: center;
+                background-repeat: repeat-y;
+                background-image: $vertical-line;
+            }
+        }
+
+        &__item {
+            display: flex;
+            padding: 10px 20px 40px !important;
+            align-items: center;
+            gap: 20px;
+            border-bottom: 1px solid #D1D6D7;
+            border-radius: 0;
+            font-weight: 600;
+
+            &--active {
+                color: #5B4FAB;
+            }
+
+            &:last-child {
+                border: none;
+            }
+
+            &--cardtext {
+                max-width: 120px;
+            }
+        }
+
+        &-form {
+            width: 50%;
+        }
+    }
+}
