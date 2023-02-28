@@ -1,0 +1,113 @@
+.payment {
+
+    &-form {
+        margin-bottom: 5rem;
+    }
+
+    &-container {
+        margin: 0 28px;
+    }
+
+    &__title {
+        font-size: 20px;
+        color: $c-primary;
+        font-weight: 400;
+        margin-bottom: 2.5rem;
+    }
+
+    &__items {
+        display: flex;
+        justify-content: space-between;
+        background: rgba(0, 0, 0, 0.0287096);
+        border-radius: 17px;
+        margin-bottom: 2.5rem;
+        padding: 5px;
+        overflow: auto;
+    }
+
+    &__item {
+        padding: 5px;
+        border-radius: 14px;
+        font-size: 14px;
+        color: #a5a5a5;
+
+        &--active {
+            background: #fff;
+            color: $c-primary;
+            font-weight: 700;
+            padding: 5px 25px;
+        }
+    }
+
+    &-form {
+
+        &__fields {
+            margin-bottom: 20px;
+
+            &--card {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+
+        &__input {
+            border: 1px solid #E8E6EA;
+            border-radius: 15px;
+            padding: 16px 20px;
+            color: #333;
+            font-size: 14px;
+            font-weight: 500;
+            &::placeholder {
+                color: #9F9A9A;
+                font-size: 14px;
+            }
+
+            &--cardnumber {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            &--expiration-date {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+                border-top-width: 0px;
+                border-bottom-right-radius: 0;
+            }
+
+            &--cvvnumber {
+                border-bottom-left-radius: 0;
+                border-top-left-radius: 0;
+                border-left-width: 0;
+                border-top-width: 0;
+                border-top-right-radius: 0;
+            }
+        }
+
+        &__label {
+            font-size: 12px;
+            color: $c-dark-blue;
+            font-weight: 600;
+            background-color: #fff;
+            display: inline-block;
+            position: relative;
+            top: 7px;
+            left: 30px;
+        }
+    }
+}
+
+.toggle-button-container {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    margin-bottom: 2rem;
+    &::before {
+        content: 'Guardar esta tarjeta';
+        position: absolute;
+        top: 0;
+        right: 50px;
+        font-size: 14px;
+        color: #000;
+        font-weight: 700;
+    }
+}

@@ -32,11 +32,11 @@ input {
     width: 100%;
     border: none;
     outline: none;
-    background-color: transparent !important;
+    background-color: transparent;
     font-family: $f-body;
 
     &::placeholder {
-        color: $c-tertiary !important;
+        color: $c-tertiary;
     }
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
@@ -69,6 +69,47 @@ select {
     }
 }
 
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+.btn-switch {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 43px;
+    height: 21px;
+    background: #D1D6D7;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+}
+
+.btn-switch:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 19px;
+    height: 19px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked + .btn-switch {
+    background: #bada55;
+}
+
+input:checked + .btn-switch:after {
+    left: calc(100% - 1px);
+    transform: translateX(-100%);
+}
+
+.btn-switch:active:after {
+    width: 41px;
+}
+
 .flex-center {
     display: flex;
     justify-content: center;
@@ -82,8 +123,16 @@ select {
     font-family: $f-body;
 }
 
+.w-100 {
+    width: 100%;
+}
+
 .w-75 {
     width: 75%;
+}
+
+.w-50 {
+    width: 50%;
 }
 
 .w-25 {
@@ -136,15 +185,22 @@ select {
 }
 
 .btn {
-    padding: 10px 50px;
+    padding: 15px 50px;
     border-radius: 25px;
     text-align: center;
     letter-spacing: 1px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: $f-body;
+    width: 100%;
 }
 
 .btn-primary {
     background-color: $c-primary;
     color: #fff;
+    box-shadow: 0px 9px 15px rgba(41, 52, 208, 0.2);
+    border-radius: 10px;
 
     transition-property: background-color;
     transition-duration: 0.3s;
@@ -152,6 +208,16 @@ select {
 
     &:hover {
         background-color: darken($c-primary, 7);
+    }
+}
+
+.btn-disabled {
+    background-color: #D1D6D7;
+    box-shadow: 0px 9px 15px rgba(151, 151, 151, 0.1);
+    color: #676D75;
+
+    &:hover {
+        background-color: darken(#D1D6D7, 7);
     }
 }
 
