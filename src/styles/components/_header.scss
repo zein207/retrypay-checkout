@@ -88,6 +88,7 @@ header {
 
     &__total {
         font-size: 47px;
+        color: #fff;
     }
 
     &-content {
@@ -141,5 +142,53 @@ header {
     }
     &--address::after {
         background-image: $pin-icon;
+    }
+}
+
+// TABLET
+@media screen and (min-width: 767px) {
+
+    .logo {
+        width: 134px;
+
+        &__container {
+            padding: 26px 48px;
+        }
+    }
+
+    header {
+        .subtitle {
+            font-size: 29px;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    .profile-summary-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .summary-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 2px;
+            left: -60px;
+            height: 80%;
+            background-position: center;
+            background-repeat: repeat-y;
+            background-image: $vertical-line;
+        }
+    }
+
+    .address-inputs {
+        padding-left: 25px;
     }
 }

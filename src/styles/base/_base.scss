@@ -232,3 +232,10 @@ input:checked + .btn-switch:after {
 .center-container {
     margin: 0 28px;
 }
+
+// TABLET
+@media screen and (min-width: 767px) {
+    .center-container {
+        margin: 0 35px;
+    }
+}
